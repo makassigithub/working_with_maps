@@ -27,7 +27,7 @@ public class Case_CollectionMaps {
 		                            carMap.put("Toyota",toyotaList );
 		                            carMap.put("Mazda",mazdaList);
 		                            
-// get the set of entries in the map and loop through the colections
+// get the set of entries in the map and loop through the collections
 Set<Map.Entry<String,ArrayList<Car>>>	entries = carMap.entrySet(); 
 for(Map.Entry<String,ArrayList<Car>> entry :entries ){	
 	System.out.println(entry.getKey()+"s :"+entry.getValue());	
@@ -37,11 +37,9 @@ System.out.println("\n");
 //Or we could loop through both the entries and their content at the same time
 Set<Map.Entry<String,ArrayList<Car>>>	entries2 = carMap.entrySet(); 
 for(Map.Entry<String,ArrayList<Car>> entry :entries2 ){	
-	for(Car c: entry.getValue()){
-		
+	for(Car c: entry.getValue()){		
 		System.out.println("Made: "+c.getMade()+"  "+"Series: "+c.getSeries()+"  "+"Millage: "+c.getMillage()+"  "+"good Condition: "+c.isNew());
 	}
-
 }
 				
 }
