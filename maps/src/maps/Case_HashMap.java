@@ -8,7 +8,7 @@ import java.util.Set;
 public class Case_HashMap {
 	
 public static void main(String...args){
-//Instanciate a HashMap to hold people names and They salaries 
+//Instantiate a HashMap to hold people names and They salaries 
 HashMap<String,Double> salaries = new HashMap<String,Double>();
 
 //populate the Map
@@ -18,8 +18,8 @@ salaries.put("Teeya", 7693.45);
 salaries.put("Rene", 15893.45);
 salaries.put("Patrick", 56893.45);
 
-//Get the Entry sets of the map from printing
-//HashMap does not garantee the storage in the entry order
+//Get the Entry sets of the map for printing
+//HashMap does not guarantee the storage in the entry order
 Set<Map.Entry<String,Double>> salSet = salaries.entrySet();
 for(Map.Entry<String,Double> sal : salSet){
 	
@@ -53,11 +53,11 @@ System.out.println();
 //because keys should be unique, the put() return the value being associated with the key before, 
 //or return null otherwise
 
-System.out.println("inserting Brahima again will retain: "+salaries.put("Brahima",10000.66)+"as old value");
+System.out.println("inserting Brahima again will return: "+salaries.put("Brahima",10000.66)+"as old value");
 System.out.println("inserting a new key/value retuns null: "+salaries.put("Tracy",7000.66));
-System.out.println("putIfAbsent() ensure there is no key/value before adding : "+salaries.put("Tracy",7000.66));
+System.out.println("putIfAbsent() ensure there is no key/value before adding : "+salaries.putIfAbsent("Tracy",7000.66));
 
-//insert Map of inside Map
+//insert inside Map
 HashMap<String,Double> new_map =new HashMap<String,Double>(3);
 new_map.put("Chapman",6578.05);
 new_map.put("Hedi",5578.45);
@@ -73,18 +73,19 @@ for(Map.Entry<String,Double> sal : salSet2){
 	System.out.println();
 }
 System.out.println();
-//remove object based on the key from the Map
+
+//remove object from the Map based on the key 
 System.out.println("remove(k) delete from theMap and returns: "+ salaries.remove("Patrick"));
 
 //getting and overriding an entry
 double sa = salaries.get("Semalo");
 System.out.println("Semalo's current salary is: "+sa);
-sa += 500;//increase is salar
+sa += 500;//increase is salary
 salaries.put("Semalo",sa);//this will remove and return the old salary
 System.out.println("Semalo's new salary now is: "+salaries.get("Semalo"));
 
 //we can also replace a value based on the key
-System.out.println("replace() return the old value if it exist: "+salaries.replace("Chapman", 6000.00));
+System.out.println("replace() return the old value if it exists: "+salaries.replace("Chapman", 6000.00));
 System.out.println();
 System.out.println("The Map now contains: ");
 Set<Map.Entry<String,Double>> salSet3 = salaries.entrySet();
